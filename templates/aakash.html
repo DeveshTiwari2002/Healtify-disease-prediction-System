@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: aqua;
+        }
+
+        .popup {
+            display: block;
+            position: fixed;
+            left: 25%;
+            top: 25%;
+            width: 50%;
+            height: 50%;
+            border: 5px solid red;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            z-index: 1;
+        }
+
+        .overlay {
+            display: block;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .close {
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="overlay" class="overlay" onclick="document.getElementById('popup').style.display='none'; document.getElementById('overlay').style.display='none';"></div>
+
+    <div id="popup" class="popup">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <center> <h1 style="background-color:lightblue; "><font color="maroon">Healthify: Disease Prediction System</h1>
+        <div class="container signin">
+          <p  style="font-size:larger; font-weight: bolder; font: 20px;"> For Continue, Please Login  <br/><center><button type="submit" class="btn btn-primary" style="width: 20%; height: 30%; font-weight: bolder;"onclick="window.location.href='/login';" >Login </button></center></p>
+      </div>
+        <div class="container signin">
+          <p style="font-size:larger; font-weight: bolder; font: 20px;">Don't have an account?  <br/><center><button type="submit" class="btn btn-primary" style="width: 20%; height: 30%; font-weight: bolder;"onclick="window.location.href='/register';" >Register Now </button></center></p>
+      </div>
+    </center>
+    </div>
+  
+</body>
+
+<script>
+  function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+      window.location.href = "/"; // Replace "home.html" with your desired page
+  }
+</script>
+<script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+<script>
+  window.botpressWebChat.init({
+      "composerPlaceholder": "Chat with Healthify Bot ",
+      "botConversationDescription": "Hi, I am your Assistant ",
+      "botId": "9f1ffc61-51d0-4d9c-acd7-bd1be08965c0",
+      "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+      "messagingUrl": "https://messaging.botpress.cloud",
+      "clientId": "9f1ffc61-51d0-4d9c-acd7-bd1be08965c0",
+      "webhookId": "ae030a0c-2ae3-4e39-a9b0-1e34a35b177d",
+      "lazySocket": true,
+      "themeName": "prism",
+      "botName": "Healthify Bot ",
+      "avatarUrl": "https://static.vecteezy.com/system/resources/previews/010/054/157/original/chat-bot-robot-avatar-in-circle-round-shape-isolated-on-white-background-stock-illustration-ai-technology-futuristic-helper-communication-conversation-concept-in-flat-style-vector.jpg",
+      "frontendVersion": "v1",
+      "showPoweredBy": true,
+      "theme": "prism",
+      "themeColor": "#2563eb"
+  });
+</script>
+
+</html>

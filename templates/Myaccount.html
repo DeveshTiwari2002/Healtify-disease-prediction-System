@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+
+        .containerx {
+            margin-top: 30px;
+            max-width: 600px;
+            margin-left: 400px;
+           margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        .row {
+            margin-bottom: 20px;
+           
+        }
+
+        .label {
+            font-weight: bold;
+        }
+
+        .info {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        @media screen and (min-width: 576px) {
+            .row {
+                display: flex;
+                align-items: center;
+            }
+
+            .label {
+                margin: 10px 10px ;
+                flex-basis: 150px;
+            }
+
+            .info {
+                flex-grow: 1;
+                margin-left: 20px;
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Your Navbar -->
+    <div>
+    {% include 'Navbar.html' %}
+</div>
+    <div class="containerx">
+        <div class="row">
+            <div class="label">Name:</div>
+            <div class="info">{{user[0]}}</div>
+        </div>
+        <div class="row">
+            <div class="label">Email:</div>
+            <div class="info">{{user[4]}}</div>
+        </div>
+        <div class="row">
+            <div class="label">Phone Number:</div>
+            <div class="info">{{user[2]}}</div>
+        </div>
+        <div class="row">
+            <div class="label">Sex:</div>
+            <div class="info">{{user[1]}}</div>
+        </div>
+        <div class="row">
+            <div class="label">City:</div>
+            <div class="info">{{user[3]}}</div>
+        </div>
+
+        <center>
+            <button type="submit" class="btn btn-danger" style="width: 20%; height: 30%; font-weight: bolder;" onclick="window.location.href='/logout';">Logout</button>
+        </center>
+    </div>
+
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script>
+      window.botpressWebChat.init({
+          "composerPlaceholder": "Chat with Healthify Bot ",
+          "botConversationDescription": "Hi, I am your Assistant ",
+          "botId": "9f1ffc61-51d0-4d9c-acd7-bd1be08965c0",
+          "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+          "messagingUrl": "https://messaging.botpress.cloud",
+          "clientId": "9f1ffc61-51d0-4d9c-acd7-bd1be08965c0",
+          "webhookId": "ae030a0c-2ae3-4e39-a9b0-1e34a35b177d",
+          "lazySocket": true,
+          "themeName": "prism",
+          "botName": "Healthify Bot ",
+          "avatarUrl": "https://static.vecteezy.com/system/resources/previews/010/054/157/original/chat-bot-robot-avatar-in-circle-round-shape-isolated-on-white-background-stock-illustration-ai-technology-futuristic-helper-communication-conversation-concept-in-flat-style-vector.jpg",
+          "frontendVersion": "v1",
+          "showPoweredBy": true,
+          "theme": "prism",
+          "themeColor": "#2563eb"
+      });
+    </script>
+{% include 'footer.html' %}
+</body>
+</html>

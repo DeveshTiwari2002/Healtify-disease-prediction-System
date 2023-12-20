@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="./static/register.css">
+    <link rel="stylesheet" href="./static/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+</head>
+<body style="background-image:url(/static/images/HealthifyWatermark.png); background-repeat: no-repeat; background-position:center;">
+   <!--Navbar-->
+ 
+   {% include 'Navbar.html' %}
+
+    <form action="/HeathHome" method="post">
+        <div class="container">
+            <center><h1 style="color: #1d044d; font-family:Verdana, Geneva, Tahoma, sans-serif">Register</h1></center>
+            <p>***Please fill in this form to create an account.***</p>
+            <hr>
+            <label for="name"><b>Name </b></label>
+            <input type="text" placeholder="Enter Your Name" name="name" required>
+
+            <label for="sex"><b>Sex</b></label>
+            <div class="form-group">
+            <select class="form-control" id="sex" name="sex"  required >
+                <option selected disabled hidden>Select Option </option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Others">Others</option>
+              <option value="not">Prefer, Not to say</option>
+            </select> 
+            </div>
+           
+            <label for="phone"><b>Phone Number</b></label>
+            <input type="text" placeholder="Enter Your Phone Number" name="phone" required>
+           
+            <label for="city"><b>City</b></label>
+            <div class="form-group">
+                <select class="form-control" id="city" name="city"  required >
+                    <option selected disabled hidden>Select Option </option>
+                    {% for item in city %}
+                        <option value="{{ item }}">{{ item }}</option>
+                    {% endfor %}
+                </select>  
+            </div>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+
+            <center><button type="submit" class="btn btn-danger" style="width: 20%; height: 30%; font-weight: bolder;" value="Register">Register</button></center>
+        </div>
+
+        <div class="container signin">
+            <p style="font-size:larger; font-weight: bolder; font: 20px;">Already have an account? <a href="login">SignIn</a>.</p>
+        </div>
+    </form>
+    
+    
+    
+{% include 'footer.html' %}
+
+
+
+<script>
+    window.botpressWebChat.init({
+        "composerPlaceholder": "Chat with Healthify Bot ",
+        "botConversationDescription": "Hi, I am your Assistant ",
+        "botId": "9f1ffc61-51d0-4d9c-acd7-bd1be08965c0",
+        "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+        "messagingUrl": "https://messaging.botpress.cloud",
+        "clientId": "9f1ffc61-51d0-4d9c-acd7-bd1be08965c0",
+        "webhookId": "ae030a0c-2ae3-4e39-a9b0-1e34a35b177d",
+        "lazySocket": true,
+        "themeName": "prism",
+        "botName": "Healthify Bot ",
+        "avatarUrl": "https://static.vecteezy.com/system/resources/previews/010/054/157/original/chat-bot-robot-avatar-in-circle-round-shape-isolated-on-white-background-stock-illustration-ai-technology-futuristic-helper-communication-conversation-concept-in-flat-style-vector.jpg",
+        "frontendVersion": "v1",
+        "showPoweredBy": true,
+        "theme": "prism",
+        "themeColor": "#2563eb"
+    });
+  </script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

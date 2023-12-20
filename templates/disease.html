@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/style.css">
+    <!-- Link Bootstrap CSS -->
+    <link rel="stylesheet" href="./static/register.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+
+    <title>Flask List Input</title>
+</head>
+<style>
+    .user-icon {
+        color: red;
+        font-size: 24px;
+        margin-right: 5px;
+    }
+    .user-icon:hover {
+background-color:rgba(201, 200, 196, 0.837);
+color: rgb(201, 18, 12);
+}
+    
+</style>
+<body style="background-image:url(/static/images/HealthifyWatermark.png); background-repeat: no-repeat; background-position:center;" >
+    <!--Navbar-->
+    
+<div class="navbar">
+    <div class="logo">
+        <img src="/static/Images/main_logo.png" alt="Logo" width="150px " height="300px">
+    </div>
+    <div class="drawer-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul class="nav-links">
+        <li><a class="active" href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/disease">Predictor</a></li>
+        <li><a href="/result">Result</a></li>
+        <li><h3><a href="/aakash"> <i class="far fa-user-circle user-icon" style="color: red; font-size:160%;"
+            border-radius: 50%;
+            padding: 10px;"></i> </a></h3></li>
+        
+    </ul>
+ </div>   
+
+    <div class="container mt-5">
+    <form action="/result" method="post">
+        <div class="form-group">
+        <label class="required">Symptom 1 : </label>
+        <select class="form-control" id="sy1" name="sy1" required>
+            <option selected disabled hidden value="">Select Option</option>
+            {% for item in l1 %}
+                <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+        </select>
+        </div>
+        <div class="form-group">
+        <label class="required">Symptom 2 : </label>
+        <select class="form-control" id="sy2" name="sy2"required>
+            <option selected disabled hidden value="">Select Option</option>
+            {% for item in l1 %}
+                
+                <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+        </select> 
+    </div>
+    <div class="form-group">
+        <label  class="required">Symptom 3 : </label>
+         <select class="form-control" id="sy3" name="sy3"required>
+            
+            <option selected disabled hidden value="">Select Option </option>
+            {% for item in l1 %}
+                <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+        </select>  
+    </div>
+    <div class="form-group">
+        <label >Symptom 4 :</label>
+        <select class="form-control" id="sy4" name="sy4" required>
+            <option selected disabled hidden>Select Option </option>
+            {% for item in l1 %}
+                <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+        </select>  
+    </div>
+    <div class="form-group">
+        <label>Symptom 5 : </label>
+        <select class="form-control" id="sy5" name="sy5" required>
+            <option selected disabled hidden >Select Option </option>
+            {% for item in l1 %}
+                <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    
+        <center><input type="submit" class="btn btn-danger" style="width: 20%; height: 30%; font-weight: bolder;margin-bottom: 20px;" onclick="window.location.href='/login';" value="Predict"> </center>
+    
+    </form>
+    </div>
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script>
+      window.botpressWebChat.init({
+          "composerPlaceholder": "Chat with Healthify Bot ",
+          "botConversationDescription": "Hi, I am your Assistant ",
+          "botId": "9f1ffc61-51d0-4d9c-acd7-bd1be08965c0",
+          "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+          "messagingUrl": "https://messaging.botpress.cloud",
+          "clientId": "9f1ffc61-51d0-4d9c-acd7-bd1be08965c0",
+          "webhookId": "ae030a0c-2ae3-4e39-a9b0-1e34a35b177d",
+          "lazySocket": true,
+          "themeName": "prism",
+          "botName": "Healthify Bot ",
+          "avatarUrl": "https://static.vecteezy.com/system/resources/previews/010/054/157/original/chat-bot-robot-avatar-in-circle-round-shape-isolated-on-white-background-stock-illustration-ai-technology-futuristic-helper-communication-conversation-concept-in-flat-style-vector.jpg",
+          "frontendVersion": "v1",
+          "showPoweredBy": true,
+          "theme": "prism",
+          "themeColor": "#2563eb"
+      });
+    </script>
+  {% include 'footer.html' %}
+</body>
+</html>

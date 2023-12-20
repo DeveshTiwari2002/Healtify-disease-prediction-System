@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="./static/register.css">
+
+    <link rel="stylesheet" href="./static/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Add Font Awesome CSS link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+        .user-icon {
+            color: red;
+            font-size: 24px;
+            margin-right: 5px;
+        }
+        .user-icon:hover {
+    background-color:rgba(201, 200, 196, 0.837);
+    color: rgb(201, 18, 12);
+}
+
+
+
+        
+    </style>
+    <div class="navbar">
+    <div class="logo">
+        <img src="/static/Images/main_logo.png" alt="Logo" width="150px " height="300px">
+        <!-- <h1 style="color: maroon; font-family:lora; font-weight: bolder; fo<i class="fas fa-stethoscope" style="color:black; font-size: xx-large;font-style:italic"></i> -->
+        <!-- </h1> -->
+    </div>
+    <div class="drawer-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul class="nav-links">
+        <li><a class="active" href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/disease">Predictor</a></li>
+        <li><a href="/result">Result</a></li>
+        {% if user %}
+        <li><h3><a href="/aakash"> <i class="far fa-user-circle user-icon" style="color: red; font-size:160%;"
+            border-radius: 50%;
+            padding: 10px;"></i> </a></h3></li>
+            {% else %}
+            <li><a href="/login">Sign In</a></li>
+            <li><a href="/register">Sign Up</a></li>
+        {% endif %}
+    </ul>
+ </div>   
+ 
+ 

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .main-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1600px;
+            height: 250px;
+            margin-left: 6%;
+            margin-top: 2%;
+            padding: 10px;
+            border-radius: 20px;
+            border:5px solid gray;
+
+        }
+
+        .card-container {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .custom-card {
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            width: 100%;
+            height: 90%;
+        }
+
+        u {
+            font-weight: bold;
+        }
+
+        b {
+            font-weight: bold;
+            display: block;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        .custom-image-container {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+        }
+
+        .custom-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .diseases {
+            font-size: 16px;
+        }
+        .container {
+          margin-top: 3rem;
+        }
+    
+        .left-content {
+          color: maroon;
+          text-align: left;
+        }
+    
+        .right-content {
+          font-family: "Arial", sans-serif;
+          color: #4F4F4F;
+          font-size: 18px;
+          line-height: 1.6;
+          text-align: left;
+        }
+    
+        .heading1 {
+          color: #800000;
+          font-size: 28px;
+          font-weight: bold;
+        }
+    
+        .heading2 {
+          color: #800000;
+          font-size: 36px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+    
+        .hr-style {
+          background-color: #0B877A;
+          height: 5px;
+          border: 0;
+        }
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card-container {
+                padding: 0;
+            }
+
+            .custom-image-container {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="color: maroon; margin-left: 4%;">Why Choose Us ? </h3>
+    <div class="main-container" style="margin-left: 4%;">
+      
+        <div class="card-container">
+            <div class="custom-card" style="background-color: #F06363;">
+                <h5>Accuracy:</h5>
+                <h6>Our system is built on extensive medical knowledge and vast datasets, ensuring reliable predictions.</h6>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="custom-card" style="background-color: #63B4F0;">
+                <h5>Privacy:</h5>
+                <h6>We prioritize your data security and follow strict privacy policies.</h6>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="custom-card" style="background-color: #60D394;">
+                <h5>Accessibility:</h5>
+                <h6>Our platform is user-friendly and available 24/7 from the comfort of your home.</h6>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="custom-card" style="background-color: #D3B63D;">
+                <h5>Empowerment:</h5>
+                <h6>Knowledge is power. We empower you with valuable health insights.</h6>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container" style="margin-left: 4%;">
+        <div class="row">
+          <div class="col-6 left-content">
+            <h3>OUR TEAM</h3>
+            <hr class="hr-style" width="60px">
+            <h4 >One Team, Many Talents.</h4>
+          </div>
+          <div class="col-6 right-content">
+            <h5 style="margin-left:20%;">With a culture of collaboration, our dedicated team of Software engineers work tirelessly to bring you the best disease prediction system. We're committed to your health and well-being.</h5>
+          </div>
+        </div>
+      </div>
+</body>
+
+</html>
+
+
